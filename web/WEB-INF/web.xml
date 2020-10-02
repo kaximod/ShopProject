@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
+         version="4.0">
+    <servlet>
+        <servlet-name>LoginServlet</servlet-name>
+        <servlet-class>com.shop.controller.LoginServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>LoginServlet</servlet-name>
+        <url-pattern>/LoginServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>RegistServlet </servlet-name>
+        <servlet-class>com.shop.controller.RegistServlet </servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>RegistServlet </servlet-name>
+        <url-pattern>/RegistServlet </url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+    <servlet-name>KaptchaServlet</servlet-name>
+    <servlet-class>com.google.code.kaptcha.servlet.KaptchaServlet</servlet-class>
+</servlet>
+    <servlet-mapping>
+        <servlet-name>KaptchaServlet</servlet-name>
+        <url-pattern>/kaptcha.jpg</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>LogoutServlet</servlet-name>
+        <servlet-class>com.shop.controller.LogoutServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>LogoutServlet</servlet-name>
+        <url-pattern>/LogoutServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>UserNameJudge</servlet-name>
+        <servlet-class>com.shop.controller.UserNameJudge</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>UserNameJudge</servlet-name>
+        <url-pattern>/UserNameJudge</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>QueryAllServlet</servlet-name>
+        <servlet-class>com.shop.controller.QueryAllServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>QueryAllServlet</servlet-name>
+        <url-pattern>/QueryAllServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+    <servlet-name>AddGoodServlet</servlet-name>
+    <servlet-class>com.shop.controller.AddGoodServlet</servlet-class>
+</servlet>
+    <servlet-mapping>
+        <servlet-name>AddGoodServlet</servlet-name>
+        <url-pattern>/AddGoodServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>DeleteServlet</servlet-name>
+        <servlet-class>com.shop.controller.DeleteServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DeleteServlet</servlet-name>
+        <url-pattern>/DeleteServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>UpdateServlet1</servlet-name>
+        <servlet-class>com.shop.controller.UpdateServlet1</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>UpdateServlet1</servlet-name>
+        <url-pattern>/UpdateServlet1</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>IntoCartServlet</servlet-name>
+        <servlet-class>com.shop.controller.IntoCartServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>IntoCartServlet</servlet-name>
+        <url-pattern>/IntoCartServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>CartDeleteServlet</servlet-name>
+        <servlet-class>com.shop.controller.CartDeleteServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CartDeleteServlet</servlet-name>
+        <url-pattern>/CartDeleteServlet</url-pattern>
+    </servlet-mapping>
+</web-app>
