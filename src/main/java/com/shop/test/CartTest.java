@@ -9,11 +9,12 @@ import java.util.List;
 
 public class CartTest {
     CartService cartService=new CartServiceImpl();
+    Cart cart=new Cart();
     @Test
     public void text1(){
        List<Cart> CartList= cartService.queryAll();
-        for (int i = 0; i <CartList.size() ; i++) {
-            System.out.println(CartList.get(i).getPrice());
+        for (Cart cart : CartList) {
+            System.out.println(cart);
         }
     }
 }

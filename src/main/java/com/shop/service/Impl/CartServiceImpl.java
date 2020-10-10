@@ -7,6 +7,7 @@ import com.shop.dao.Impl.CartDaoImpl;
 import com.shop.dao.Impl.GoodsDaoImpl;
 import com.shop.service.CartService;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 public class CartServiceImpl implements CartService {
@@ -22,12 +23,27 @@ public class CartServiceImpl implements CartService {
     }
 
     @Override
-    public int cleanAll() {
-        return cartDao.cleanAll();
+    public int cleanAll(int userId) {
+        return cartDao.cleanAll(userId);
     }
 
     @Override
     public List<Cart> queryAll() {
         return cartDao.queryAll();
+    }
+
+    @Override
+    public List<Cart> queryByUser(int userId) {
+        return cartDao.queryByUser(userId);
+    }
+
+    @Override
+    public List<Cart> queryById(int goodId, int userId) {
+        return cartDao.queryById(goodId,userId);
+    }
+
+    @Override
+    public int update(int cartNum, BigDecimal cartPriceTotal, int cartId) {
+        return cartDao.update(cartNum, cartPriceTotal,cartId);
     }
 }

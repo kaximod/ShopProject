@@ -101,4 +101,53 @@
         <servlet-name>CartDeleteServlet</servlet-name>
         <url-pattern>/CartDeleteServlet</url-pattern>
     </servlet-mapping>
+
+    <filter>
+        <filter-name>ManagerFilter</filter-name>
+        <filter-class>com.shop.controller.ManagerFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>ManagerFilter</filter-name>
+        <url-pattern>/pages/manager/*</url-pattern>
+    </filter-mapping>
+
+    <filter>
+        <filter-name>CartFilter</filter-name>
+        <filter-class>com.shop.controller.CartFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>CartFilter</filter-name>
+        <url-pattern>/IntoCartServlet/*</url-pattern>
+    </filter-mapping>
+
+    <servlet>
+        <servlet-name>IndexQueryAllServlet</servlet-name>
+        <servlet-class>com.shop.controller.IndexQueryAllServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>IndexQueryAllServlet</servlet-name>
+        <url-pattern>/IndexQueryAllServlet</url-pattern>
+    </servlet-mapping>
+    <welcome-file-list>
+        <welcome-file>index.html</welcome-file>
+    </welcome-file-list>
+
+    <servlet>
+        <servlet-name>CartAddServlet</servlet-name>
+        <servlet-class>com.shop.controller.CartAddServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CartAddServlet</servlet-name>
+        <url-pattern>/CartAddServlet</url-pattern>
+    </servlet-mapping>
+
+
+    <servlet>
+        <servlet-name>CartCleanAllServlet</servlet-name>
+        <servlet-class>com.shop.controller.CartCleanAllServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CartCleanAllServlet</servlet-name>
+        <url-pattern>/CartCleanAllServlet</url-pattern>
+    </servlet-mapping>
 </web-app>

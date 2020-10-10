@@ -19,6 +19,13 @@ public class GoodsDaoImpl extends BaseDao implements GoodsDao {
         String sql = "SELECT * FROM `good` WHERE `goodname` LIKE ?;";
         return queryForList(Goods.class, sql, "%" + goodName + "%");
     }
+
+    @Override
+    public List<Goods> queryById(int Id) {
+        String sql = "SELECT * FROM `good` WHERE `goodid` = ?;";
+        return queryForList(Goods.class, sql,Id);
+    }
+
     @Override
     public List<Goods> queryByPrice(BigDecimal price1,BigDecimal price2) {
         String sql = "SELECT * FROM `good` WHERE `goodprice` >= ? AND `goodprice` <= ?;";
@@ -46,5 +53,32 @@ public class GoodsDaoImpl extends BaseDao implements GoodsDao {
         String sql = "UPDATE `good` SET `goodname` = ?,`goodprice` = ?,`goodbrand`=?,`goodsales`=?,`goodstock`=? WHERE `goodid` = ?;";
         result = update(sql,good.getGoodName(),good.getGoodPrice(),good.getGoodBrand(),good.getGoodSales(),good.getGoodStock(),good.getGoodId() );
         return result;
+    }
+
+    @Override
+    public Integer queryForPageTotalCount() {
+        String sql = "select count(*) from `T_goods`";
+        Number count = (Number) queryForSingleValue(sql);
+        return count.intValue();
+    }
+
+    @Override
+    public List<Goods> queryForPageItems(int begin, int pageSize) {
+        String sql = "SELECT `id` , `name` , `producer` , `price` , `sales` , `stock` , `img_path` FROM `T_goods` LIMIT ?,?";
+        return queryForList(Goods.class, sql, begin, pageSize);
+    }
+
+    @Override
+    public Integer queryForPageTotalCountByPrice(int min, int max) {
+        String sql = "select count(*) from T_goods where price between ? and ?";
+        Number count = (Number) queryForSingleValue(sql,min,max);
+        return count.intValue();
+    }
+
+    @Override
+    public List<Goods> queryForPageItemsByPrice(int begin, int pageSize, int min, int max) {
+        String sql = "select `id`,`name`,`producer`,`price`,`sales`,`stock`,`img_path` " +
+                "from T_goods where price between ? and ? order by price limit ?,?";
+        return queryForList(Goods.class,sql,min,max,begin,pageSize);
     }
 }

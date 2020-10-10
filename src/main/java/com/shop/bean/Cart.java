@@ -5,21 +5,32 @@ import java.math.BigDecimal;
 public class Cart {
     private int cartId;
     private int userId;
+    private int goodId;
     private  String cartName;
     private int cartNum;
-    private BigDecimal Price;
-    private BigDecimal PriceTotal;
+    private BigDecimal cartPrice;
+    private BigDecimal cartPriceTotal;
 
     public Cart() {
     }
 
-    public Cart(int cartId, int userId, String cartName, int cartNum, BigDecimal price, BigDecimal priceTotal) {
+    public Cart(int cartId, int userId, int goodId, String cartName, int cartNum, BigDecimal cartPrice, BigDecimal cartPriceTotal) {
         this.cartId = cartId;
         this.userId = userId;
+        this.goodId = goodId;
         this.cartName = cartName;
         this.cartNum = cartNum;
-        Price = price;
-        PriceTotal = priceTotal;
+        this.cartPrice = cartPrice;
+        this.cartPriceTotal = cartPriceTotal;
+    }
+
+    public Cart(int goodId, int userId, String cartName, int cartNum, BigDecimal cartPrice, BigDecimal cartPriceTotal) {
+        this.goodId=goodId;
+        this.userId=userId;
+        this.cartName=cartName;
+        this.cartNum=cartNum;
+        this.cartPrice=cartPrice;
+        this.cartPriceTotal=cartPriceTotal;
     }
 
     public int getCartId() {
@@ -54,20 +65,28 @@ public class Cart {
         this.cartNum = cartNum;
     }
 
-    public BigDecimal getPrice() {
-        return Price;
+    public BigDecimal getCartPrice() {
+        return cartPrice;
     }
 
-    public void setPrice(BigDecimal price) {
-        Price = price;
+    public void setCartPrice(BigDecimal cartPrice) {
+        this.cartPrice = cartPrice;
     }
 
-    public BigDecimal getPriceTotal() {
-        return PriceTotal;
+    public BigDecimal getCartPriceTotal() {
+        return cartPriceTotal;
     }
 
-    public void setPriceTotal(BigDecimal priceTotal) {
-        PriceTotal = priceTotal;
+    public void setCartPriceTotal(BigDecimal cartPriceTotal) {
+        this.cartPriceTotal = cartPriceTotal;
+    }
+
+    public int getGoodId() {
+        return goodId;
+    }
+
+    public void setGoodId(int goodId) {
+        this.goodId = goodId;
     }
 
     @Override
@@ -75,10 +94,11 @@ public class Cart {
         return "Cart{" +
                 "cartId=" + cartId +
                 ", userId=" + userId +
+                ", goodId=" + goodId +
                 ", cartName='" + cartName + '\'' +
                 ", cartNum=" + cartNum +
-                ", Price=" + Price +
-                ", PriceTotal=" + PriceTotal +
+                ", cartPrice=" + cartPrice +
+                ", cartPriceTotal=" + cartPriceTotal +
                 '}';
     }
 }

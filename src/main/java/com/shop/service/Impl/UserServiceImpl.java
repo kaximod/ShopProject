@@ -20,6 +20,11 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    public User queryById(int Id) {
+        return userDao.queryByUserId(Id);
+    }
+
+    @Override
     public List<User> queryAll() {
         return userDao.queryAll();
     }

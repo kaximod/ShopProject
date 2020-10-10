@@ -1,6 +1,7 @@
 package com.shop.controller;
 
 import com.shop.bean.Cart;
+import com.shop.bean.User;
 import com.shop.service.CartService;
 import com.shop.service.Impl.CartServiceImpl;
 
@@ -20,9 +21,11 @@ public class CartCleanAllServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        cartService.cleanAll();
-        List<Cart> CartList=cartService.queryAll();
-        req.setAttribute("CartList",CartList);
+        List<Cart> CartList3 = cartService.queryByUser(((User) req.getSession().getAttribute("user")).getId());
+        cartService.cleanAll(((User) req.getSession().getAttribute("user")).getId());
+        req.setAttribute("CartList",CartList3);
+        req.setAttribute("CartListSize", 0);
+        req.setAttribute("resultPrice", 0);
         req.getRequestDispatcher("pages/cart/cart.jsp").forward(req,resp);
     }
 }

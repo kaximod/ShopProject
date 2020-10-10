@@ -35,7 +35,7 @@
     <div>
         <a href="http://localhost:8084/shop_war_exploded/QueryAllServlet">商品管理</a>
         <a href="pages/manager/order_manager.jsp">订单管理</a>
-        <a href="index.jsp">返回商城</a>
+        <a href="IndexQueryAllServlet">返回商城</a>
     </div>
 </div>
 

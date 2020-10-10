@@ -18,16 +18,16 @@
 		<div id="header">
 			<img class="logo_img" alt="" src="static/img/logo.gif">
 			<div>
-				<span>欢迎<span class="um_span">用户</span>光临网上商城</span>
-				<a href="order/order.jsp">我的订单</a>
+				<span>欢迎<span class="um_span"><%=request.getSession().getAttribute("username")%></span>光临网上商城</span>
+				<a href="pages/order/order.jsp">我的订单</a>
 				<a href="LogoutServlet">注销</a>&nbsp;&nbsp;
-				<a href="index.jsp">返回</a>
+				<a href="IndexQueryAllServlet">返回</a>
 			</div>
 		</div>
 
 		<div id="main">
 
-			<h1>欢迎回来 <a href="index.jsp">转到主页</a></h1>
+			<h1>欢迎回来 <a href="IndexQueryAllServlet">转到主页</a></h1>
 
 		</div>
 

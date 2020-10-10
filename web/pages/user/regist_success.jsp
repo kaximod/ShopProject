@@ -21,14 +21,14 @@
 			<div>
 				<span>欢迎<span class="um_span">用户</span>光临网上商城</span>
 				<a href="../order/order.jsp">我的订单</a>
-				<a href="index.jsp">注销</a>&nbsp;&nbsp;
-				<a href="index.jsp">返回</a>
+				<a href="IndexQueryAllServlet">注销</a>&nbsp;&nbsp;
+				<a href="IndexQueryAllServlet">返回</a>
 			</div>
 		</div>
 
 		<div id="main">
 
-			<h1>注册成功! <a href="index.jsp">转到主页</a></h1>
+			<h1>注册成功! <a href="IndexQueryAllServlet">转到主页</a></h1>
 
 		</div>
 

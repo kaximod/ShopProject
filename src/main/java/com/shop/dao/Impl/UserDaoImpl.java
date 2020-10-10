@@ -21,6 +21,12 @@ public class UserDaoImpl extends BaseDao implements UserDao {
     }
 
     @Override
+    public User queryByUserId(int Id) {
+        String sql = "SELECT * FROM `shop` WHERE `userid` = ?;";
+        return queryForOne(User.class, sql,Id);
+    }
+
+    @Override
     public List<User> queryAll() {
         String sql = "SELECT * FROM `shop`";
         return queryForList(User.class, sql);
